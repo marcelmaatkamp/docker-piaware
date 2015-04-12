@@ -23,6 +23,10 @@ WORKDIR /gnuradio/piaware
 RUN make install
 
 ADD startPiaware.sh /gnuradio/piaware/startPiaware.sh
+
+EXPOSE 30003
 EXPOSE 30005
+EXPOSE 8080
+EXPOSE 8754
 
 ENTRYPOINT /gnuradio/piaware/startPiaware.sh
