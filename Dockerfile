@@ -22,7 +22,7 @@ RUN git clone https://github.com/flightaware/piaware.git
 WORKDIR /gnuradio/piaware
 RUN make install
 
-ADD startPiaware.sh /gnuradio/piaware
+ADD startPiaware.sh /gnuradio/piaware/startPiaware.sh
 EXPOSE 30005
 
-ENTRYPOINT startPiaware.sh
+ENTRYPOINT /gnuradio/piaware/startPiaware.sh
