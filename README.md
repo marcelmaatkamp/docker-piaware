@@ -6,10 +6,19 @@ Want to build and run your own ADS-B ground station for USD$10? With this docker
 This is a docker image with [http://nl.flightaware.com/adsb/piaware/](http://nl.flightaware.com/adsb/piaware/)
 
 ###Installation instructions: 
- * register for an account on [flightaware.com](http://flightaware.com)
+ * register for an account on [flightaware.com](http://flightaware.com) and get a username & password
  * insert a RTLSDR dongle
  * issue the following command: 
 ```
-$ docker run -ti --privileged --env USERNAME=<username> --env PASSWORD=<password> marcelmaatkamp/piaware
+$ docker run -d \
+  --name piaware \
+  --privileged \
+  -p 30003:30003 \
+  -p 30005:30005 \
+  -p 8080:8080 \
+  -p 8754:8754 \
+  --env USERNAME=<username> \
+  --env PASSWORD=<password> \
+  marcelmaatkamp/piaware
 ```
  * you are now eligable for a premium account! 
