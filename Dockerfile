@@ -24,9 +24,13 @@ RUN make install
 
 ADD startPiaware.sh /gnuradio/piaware/startPiaware.sh
 
+EXPOSE 10001
+EXPOSE 30001
+EXPOSE 30002
 EXPOSE 30003
+EXPOSE 30004
 EXPOSE 30005
+
 EXPOSE 8080
-EXPOSE 8754
 
 ENTRYPOINT /gnuradio/piaware/startPiaware.sh
