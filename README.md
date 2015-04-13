@@ -13,10 +13,13 @@ This is a docker image with [http://nl.flightaware.com/adsb/piaware/](http://nl.
 $ docker run -d \
   --name piaware \
   --privileged \
+  -p 10001:10001 \
+  -p 30001:30001 \
+  -p 30002:30002 \
   -p 30003:30003 \
+  -p 30004:30004 \
   -p 30005:30005 \
   -p 8080:8080 \
-  -p 8754:8754 \
   --env USERNAME=<username> \
   --env PASSWORD=<password> \
   marcelmaatkamp/piaware
